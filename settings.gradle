@@ -1,1 +1,1 @@
-include ':app', ':ruilibrary'
+include ':app', ':ruilibrary', ':imagelibrary'
