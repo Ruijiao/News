@@ -1,7 +1,7 @@
 package com.news.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MainActivity extends Activity {
+public class MainActivity extends FragmentActivity {
 
     private ViewPager mViewPager;
     private LinearLayout mTabLinear;
@@ -23,7 +23,6 @@ public class MainActivity extends Activity {
     private ArrayList<Map<String,String>> mArrayData;
     private ArrayList<CommonFragment> mFragments;
     private ArrayList<View> mTabViews;
-
 
     private AdapterViewPager mAdapter;
 
@@ -36,15 +35,19 @@ public class MainActivity extends Activity {
     }
 
     private void init(){
-        mArrayData = new ArrayList<>();
-        mFragments = new ArrayList<>();
-        mTabViews = new ArrayList<>();
+        mArrayData = new ArrayList<Map<String, String>>();
+        mFragments = new ArrayList<CommonFragment>();
+        mTabViews = new ArrayList<View>();
         mViewPager = (ViewPager)findViewById(R.id.a_main_viewpager);
         mTabLinear = (LinearLayout)findViewById(R.id.a_main_tab_ll);
         initData();
         CommonFragment fragment;
         for(int i = 0; i < mArrayData.size(); i++){
-            fragment = new CommonFragment(mArrayData.get(i).get("url"));
+//            if(i == mArrayData.size() - 1){
+//                fragment = new Setting();
+//            }else{
+                fragment = new CommonFragment(mArrayData.get(i).get("url"));
+//            }
             mFragments.add(fragment);
         }
         mAdapter = new AdapterViewPager(mFragments);

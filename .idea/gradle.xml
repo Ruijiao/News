@@ -9,8 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/imagelibrary" />
-            <option value="$PROJECT_DIR$/networklibrary" />
+            <option value="$PROJECT_DIR$/basic" />
             <option value="$PROJECT_DIR$/ruilibrary" />
           </set>
         </option>
